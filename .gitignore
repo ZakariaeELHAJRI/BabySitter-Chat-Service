@@ -1,0 +1,38 @@
+# Ignore virtual environment
+venv/
+.venv/
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore logs
+*.log
+
+# Ignore database files
+*.db
+
+# Ignore cache files
+__pycache__/
+
+# Ignore generated documentation
+docs/
+
+# Ignore environment variables file
+.env
+
+# Ignore local development configuration
+config.local.py
+
+# Ignore deployment configuration
+config.prod.py
+
+# Ignore test coverage reports
+htmlcov/
+
+# Ignore package build files
+dist/
+build/
