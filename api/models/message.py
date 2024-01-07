@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 
 class Message(Model):
     __tablename__ = "message"
-
+ 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     sender_id: Mapped[int] = mapped_column(Integer, nullable=False)
     receiver_id: Mapped[int] = mapped_column(Integer, nullable=False)
