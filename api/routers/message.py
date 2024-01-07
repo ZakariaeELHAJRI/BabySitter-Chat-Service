@@ -8,7 +8,7 @@ from api.services.messages.crud import  create_message, get_message, update_mess
 router = APIRouter()
 
 @router.post("/message")
-def create_message( message_data: dict, db: Session = Depends(get_db)):
+def create_new_message( message_data: dict, db: Session = Depends(get_db)):
     return create_message(db=db, message=message_data)
 
 @router.get("/message/{message_id}")
