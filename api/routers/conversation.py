@@ -7,6 +7,7 @@ from api.services.conversations.crud import  create_conversation, get_conversati
 
 router = APIRouter()
 
+
 @router.post("/conversation")
 def create_new_conversation( conversation_data: dict, db: Session = Depends(get_db)):
     return create_conversation(db,conversation_data)
