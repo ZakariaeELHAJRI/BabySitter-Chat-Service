@@ -5,6 +5,7 @@ mysql-data
 # Ignore IDE files
 .vscode/
 .idea/
+tree.txt
 
 # Ignore compiled Python files
 *.pyc
