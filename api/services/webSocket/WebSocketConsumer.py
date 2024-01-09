@@ -12,6 +12,7 @@ class WebSocketConsumer:
         if user_id in self.connections:
             del self.connections[user_id]
 
+   
     async def send_message(self, receiver_id: int,sender_id: int , invitation_data: Dict):
         receiver_id_str = str(receiver_id)  # Convert receiver_id to a string
         sender_id_str = str(sender_id)
