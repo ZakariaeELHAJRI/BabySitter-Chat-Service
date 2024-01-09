@@ -30,6 +30,7 @@ class WebSocketConsumer:
             print("User", sender_id, "is not connected")
 
 
+   
     async def new_conversation(self, receiver_id: int,sender_id: int , invitation_data: Dict):
         receiver_id_str = str(receiver_id)
         sender_id_str = str(sender_id)
