@@ -8,7 +8,6 @@ from sqlalchemy.orm import Session
 import json
 
 
-
 class WebSocketConsumer:
     def __init__(self):
         self.connections = {}  # Dictionary to store WebSocket connections
@@ -52,7 +51,7 @@ class WebSocketConsumer:
         if sender_id_str in self.connections:
             print("Sending message to user", sender_id)
             await self.connections[sender_id_str].send_json(invitation_data)
-
+# end class
 websocket_consumer = WebSocketConsumer()
 
 async def websocket_endpoint_client(websocket: WebSocket, user_id: int, db: Session):
