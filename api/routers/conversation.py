@@ -14,32 +14,32 @@ def create_new_conversation( conversation_data: dict, db: Session = Depends(get_
 
 @router.get("/conversation/{conversation_id}")
 def read_conversation(conversation_id: int, db: Session = Depends(get_db)):
-    db_conversation = get_conversation(db=db, conversation_id=conversation_id)
+    db_conversation = get_conversation(db,conversation_id)
     if db_conversation is None:
         raise HTTPException(status_code=404, detail="Conversation not found")
     return db_conversation
 
 @router.put("/conversation/{conversation_id}")
 def update_conversation(conversation_id: int, conversation_data: dict, db: Session = Depends(get_db)):
-    db_conversation = update_conversation(db=db, conversation_id=conversation_id, conversation_data=conversation_data)
+    db_conversation = update_conversation(db,conversation_id,conversation_data)
     if db_conversation is None:
         raise HTTPException(status_code=404, detail="Conversation not found")
     return db_conversation
 
 @router.delete("/conversation/{conversation_id}")
 def delete_conversation(conversation_id: int, db: Session = Depends(get_db)):
-    db_conversation = delete_conversation(db=db, conversation_id=conversation_id)
+    db_conversation = delete_conversation(db,conversation_id)
     if db_conversation is None:
         raise HTTPException(status_code=404, detail="Conversation not found")
     return db_conversation
 
 @router.get("/conversations")
 def read_conversations(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    conversations = get_conversations(db=db, skip=skip, limit=limit)
+    conversations = get_conversations(db,skip,limit)
     return conversations
 
 @router.get("/conversations/user/{user_id}")
 def read_conversations_by_user(user_id: int, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    conversations = get_conversations_by_user(db=db, user_id=user_id, skip=skip, limit=limit)
+    conversations = get_conversations_by_user(db,user_id,skip,limit)
     return conversations
 
