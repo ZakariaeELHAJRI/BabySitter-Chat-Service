@@ -3,10 +3,8 @@ from typing import Union
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from api.routers import message , conversation
-from api.services.conversations.crud import create_conversation
-from api.services.messages.crud import create_message
-from api.services.webSocket.WebSocketConsumer import WebSocketConsumer, websocket_endpoint_client
-from fastapi import FastAPI, WebSocket, Depends, WebSocketDisconnect, Query
+from api.services.webSocket.WebSocketConsumer import  websocket_endpoint_client
+from fastapi import FastAPI, WebSocket, Depends
 from sqlalchemy.orm import Session
 from api.database import get_db
 app = FastAPI()
