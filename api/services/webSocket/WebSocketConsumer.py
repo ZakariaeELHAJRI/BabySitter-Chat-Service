@@ -60,11 +60,13 @@ async def websocket_endpoint_client(websocket: WebSocket, user_id: int, db: Sess
         await websocket_consumer.connect(websocket, str(user_id))
         try:
             while True:
+                ##### Receive messages from the client
                 # Receive messages from the client
                 #data_str = await websocket.receive_text()
                 # mock data from client
                 # data_str = '{"event": "message", "data": {"content": "Hello zakariae", "sender_id": 1, "receiver_id": 2, "conversation_id": 1}}'
                 # mock data conversation
+                ##### Receive messages from the client
                 data_str = '{"event": "newConversation", "data": {"user1_id": 2, "user2_id": 3}}'
                 data = json.loads(data_str)
                 event_name = data.get("event")
