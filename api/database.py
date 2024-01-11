@@ -4,7 +4,8 @@ from sqlalchemy.orm import sessionmaker
 
 # localhost change to db
 
-DATABASE_URL = "mysql+pymysql://root:root@db:3306/babysitter"
+#DATABASE_URL = "mysql+pymysql://root:root@db:3306/babysitter"
+DATABASE_URL = "mysql+pymysql://root:root@localhost:3306/babysitter"
 
 
 engine = create_engine(DATABASE_URL)
